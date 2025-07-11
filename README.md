@@ -1,195 +1,133 @@
-# AI Assistant Chat Application
+# ChemWise 🧪
+### Your Intelligent Chemistry Companion
 
-A modern Next.js application that provides an interactive chat interface powered by Google's Gemini AI. Users can have conversations with an AI assistant through a clean, responsive web interface.
+ChemWise is an AI-powered chemistry assistant designed to make chemistry safer, more accessible, and easier to understand for students, researchers, hobbyists, and professionals worldwide.
 
-## Features
+## 🌟 What ChemWise Can Do
 
-- 🤖 **AI-Powered Chat**: Integration with Google Gemini AI for intelligent conversations
-- 💬 **Real-time Chat Interface**: Smooth, responsive chat experience
-- 🎨 **Modern UI**: Clean design with Tailwind CSS
-- 📱 **Responsive Design**: Works seamlessly on desktop and mobile devices
-- ⚡ **Fast Performance**: Built with Next.js for optimal performance
-- 🔒 **Secure API**: Server-side API routes for secure AI interactions
+### 🦠 **Microbe-Killer Advisor**
+Get expert guidance on antimicrobial solutions:
+- **Effective chemical recommendations** for specific microorganisms
+- **Safe concentration guidelines** to prevent harm
+- **Resistance prevention strategies** to maintain effectiveness
+- **Application methods** for different environments (lab, household, industrial)
 
-## Tech Stack
+*Perfect for: Lab technicians, healthcare workers, food safety professionals, and anyone dealing with microbial contamination.*
 
-- **Framework**: Next.js 14 with App Router
-- **Styling**: Tailwind CSS
-- **AI Integration**: Google Gemini API
-- **Language**: TypeScript
-- **Runtime**: Node.js
+### 🧼 **DIY Product Formulator**
+Create safe chemical formulations with everyday ingredients:
+- **Step-by-step formulation guides** with exact proportions
+- **Local ingredient substitutions** when specialized chemicals aren't available
+- **Safety warnings** about dangerous chemical combinations
+- **Cost-effective alternatives** to commercial products
 
-## Getting Started
+*Perfect for: Students, hobbyists, small businesses, and anyone interested in understanding product chemistry.*
 
-### Prerequisites
+### 🌱 **Green Chemistry Synthesis Advisor**
+Discover environmentally friendly synthesis routes:
+- **Sustainable reaction pathways** with reduced environmental impact
+- **Green solvent recommendations** to replace toxic alternatives
+- **Energy-efficient methods** to reduce carbon footprint
+- **Waste minimization strategies** following green chemistry principles
 
-- Node.js 18+ installed on your machine
-- A Google Gemini API key
+*Perfect for: Researchers, pharmaceutical companies, chemical manufacturers, and environmentally conscious chemists.*
 
-### Installation
+### 🧪 **Lab Calculator & AI Tutor**
+Master chemistry calculations with step-by-step guidance:
+- **Molarity and concentration calculations** with detailed explanations
+- **pH and acid-base chemistry** problem solving
+- **Stoichiometry and reaction calculations** with worked examples
+- **Dilution and solution preparation** guides
 
-1. **Clone the repository**
-   ```bash
-   git clone <your-repo-url>
-   cd <your-project-name>
-   ```
+*Perfect for: Students, educators, lab technicians, and anyone learning chemistry.*
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   ```
+## 🎯 Problems ChemWise Solves
 
-3. **Set up environment variables**
-   
-   Create a `.env.local` file in the root directory:
-   ```env
-   GEMINI_API_KEY=your_gemini_api_key_here
-   ```
+### **Safety First**
+- Prevents dangerous chemical accidents through proper guidance
+- Warns about hazardous combinations before they happen
+- Provides safe handling procedures for all recommendations
 
-   To get a Gemini API key:
-   - Visit [Google AI Studio](https://makersuite.google.com/app/apikey)
-   - Sign in with your Google account
-   - Create a new API key
-   - Copy the key to your `.env.local` file
+### **Accessibility**
+- Makes chemistry knowledge available 24/7 without expensive consultations
+- Breaks down complex concepts into understandable explanations
+- No registration required - instant access to chemistry expertise
 
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
+### **Cost-Effective Solutions**
+- Suggests affordable alternatives to expensive commercial products
+- Helps optimize formulations to reduce waste and costs
+- Provides DIY solutions using readily available materials
 
-5. **Open your browser**
-   
-   Navigate to [http://localhost:3000](http://localhost:3000) to see the application.
+### **Environmental Responsibility**
+- Promotes sustainable chemistry practices
+- Reduces environmental impact through green alternatives
+- Supports the transition to eco-friendly chemical processes
 
-## Project Structure
+### **Educational Excellence**
+- Provides step-by-step learning with detailed explanations
+- Offers practical lab tips from experienced professionals
+- Helps students understand the "why" behind chemical processes
 
-```
-├── app/
-│   ├── api/
-│   │   └── gemini/
-│   │       └── route.ts          # API endpoint for Gemini integration
-│   ├── globals.css               # Global styles
-│   ├── layout.tsx               # Root layout component
-│   └── page.tsx                 # Main chat page
-├── lib/
-│   └── geminiClient.ts          # Gemini API client
-├── components/                  # React components (if any)
-├── public/                      # Static assets
-├── .env.local                   # Environment variables (create this)
-├── next.config.js              # Next.js configuration
-├── tailwind.config.js          # Tailwind CSS configuration
-├── tsconfig.json               # TypeScript configuration
-└── package.json                # Project dependencies
-```
+## 🚀 Getting Started
 
-## API Routes
+1. **Visit ChemWise** - No registration required!
+2. **Choose your tool** - Select from our four specialized advisors
+3. **Ask your question** - Describe your chemistry challenge
+4. **Get expert guidance** - Receive detailed, safe, and practical advice
 
-### POST /api/gemini
+## 💡 Example Use Cases
 
-Sends a message to the Gemini AI and returns the response.
+### For Students
+- "How do I calculate the molarity of a 5% NaCl solution?"
+- "What's the safest way to synthesize aspirin in a school lab?"
+- "Help me understand pH calculations for my chemistry exam"
 
-**Request Body:**
-```json
-{
-  "message": "Your message to the AI"
-}
-```
+### For Professionals
+- "What's the most effective disinfectant against MRSA in hospital settings?"
+- "I need a green synthesis route for pharmaceutical intermediate X"
+- "How can I formulate an eco-friendly cleaning product?"
 
-**Response:**
-```json
-{
-  "response": "AI assistant's response"
-}
-```
+### For Hobbyists
+- "Can I make my own hand sanitizer? What's the safe recipe?"
+- "How do I create natural soap using local ingredients?"
+- "What household chemicals can kill mold safely?"
 
-## Environment Variables
+## 🛡️ Safety Commitment
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| `GEMINI_API_KEY` | Your Google Gemini API key | Yes |
+ChemWise prioritizes safety above all else:
+- **Evidence-based recommendations** from peer-reviewed sources
+- **Clear safety warnings** for all potentially hazardous procedures
+- **Regulatory compliance** information when applicable
+- **Emergency guidance** for chemical accidents
 
-## Usage
+## 🌍 Who Benefits from ChemWise?
 
-1. Open the application in your browser
-2. Type your message in the chat input
-3. Press Enter or click Send
-4. Wait for the AI assistant's response
-5. Continue the conversation naturally
+- **Students & Educators** - Learn and teach chemistry more effectively
+- **Research Scientists** - Find sustainable alternatives and solve synthesis challenges
+- **Healthcare Workers** - Get reliable disinfection and sterilization guidance
+- **Small Business Owners** - Create products safely and cost-effectively
+- **Environmental Advocates** - Implement greener chemistry practices
+- **DIY Enthusiasts** - Make household products safely at home
 
-## Development
+## 🔬 Built on Science
 
-### Available Scripts
+ChemWise combines:
+- **Advanced AI technology** for intelligent responses
+- **Peer-reviewed chemical knowledge** for accuracy
+- **Safety databases** for hazard prevention
+- **Green chemistry principles** for sustainability
 
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+## 🌟 Why Choose ChemWise?
 
-### Adding New Features
+✅ **Instant Access** - Get chemistry help anytime, anywhere  
+✅ **Expert Knowledge** - AI trained on vast chemistry databases  
+✅ **Safety Focused** - Every recommendation prioritizes user safety  
+✅ **Environmentally Conscious** - Promotes sustainable practices  
+✅ **Cost-Free** - No subscriptions or hidden fees  
+✅ **User-Friendly** - Complex chemistry made simple  
 
-1. **Frontend Components**: Add new React components in the `components/` directory
-2. **API Routes**: Create new API endpoints in the `app/api/` directory
-3. **Styling**: Use Tailwind CSS classes or add custom styles in `globals.css`
-4. **Utilities**: Add helper functions in the `lib/` directory
+---
 
-## Deployment
+**Ready to explore chemistry safely?** Start with ChemWise today and discover how AI can make chemistry more accessible, safer, and more sustainable for everyone.
 
-### Vercel (Recommended)
-
-1. Push your code to GitHub
-2. Connect your repository to [Vercel](https://vercel.com)
-3. Add your environment variables in the Vercel dashboard
-4. Deploy automatically on every push
-
-### Other Platforms
-
-The application can be deployed to any platform that supports Next.js:
-- Netlify
-- Railway
-- Heroku
-- AWS
-- Google Cloud Platform
-
-Make sure to set the `GEMINI_API_KEY` environment variable on your chosen platform.
-
-## Troubleshooting
-
-### Common Issues
-
-**API Key Error**
-- Ensure your `GEMINI_API_KEY` is correctly set in `.env.local`
-- Verify the API key is valid and has proper permissions
-
-**404 API Error**
-- Check that the Gemini API endpoint is correct
-- Ensure your API key has access to the Gemini API
-
-**Build Errors**
-- Run `npm install` to ensure all dependencies are installed
-- Check that all TypeScript types are properly defined
-
-### Getting Help
-
-If you encounter issues:
-1. Check the browser console for error messages
-2. Review the terminal output for server errors
-3. Ensure all environment variables are properly set
-4. Verify your API key is valid and active
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- [Google Gemini AI](https://ai.google.dev/) for providing the AI capabilities
-- [Next.js](https://nextjs.org/) for the excellent React framework
-- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework
+*ChemWise - Where Chemistry Meets Intelligence* 🧪✨
