@@ -3,19 +3,19 @@ import { askGemini } from '@/lib/geminiClient';
 
 export async function POST(request: NextRequest) {
   try {
-    // Parse JSON body from request
-    const body = await request.json();
-    const { prompt } = body;
+    const data = await request.json();
+    const { prompt } = data;
     
-    // Validate required fields
+    console.log('API route received request with prompt:', prompt);
+    
     if (!prompt || typeof prompt !== 'string') {
+      console.error('Invalid prompt received:', prompt);
       return NextResponse.json(
         { error: 'Prompt is required and must be a string' }, 
         { status: 400 }
       );
     }
 
-    // Validate prompt length
     if (prompt.trim().length === 0) {
       return NextResponse.json(
         { error: 'Prompt cannot be empty' }, 
@@ -30,19 +30,17 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Call Gemini API
-    const answer = await askGemini(prompt.trim());
+    const response = await askGemini(prompt.trim());
+    console.log('Successfully got response from Gemini');
     
-    // Return successful response
     return NextResponse.json({ 
-      answer,
+      answer: response,
       timestamp: new Date().toISOString()
     });
     
   } catch (error) {
-    console.error('API error:', error);
+    console.error('API route error:', error);
     
-    // Handle different types of errors
     if (error instanceof SyntaxError) {
       return NextResponse.json(
         { error: 'Invalid JSON in request body' }, 
@@ -50,7 +48,6 @@ export async function POST(request: NextRequest) {
       );
     }
     
-    // Generic server error
     return NextResponse.json(
       { error: 'Failed to process request. Please try again.' }, 
       { status: 500 }
@@ -58,7 +55,6 @@ export async function POST(request: NextRequest) {
   }
 }
 
-// Handle OPTIONS for CORS
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,

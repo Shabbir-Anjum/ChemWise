@@ -6,11 +6,19 @@ export async function askGemini(prompt: string): Promise<string> {
       throw new Error('GEMINI_API_KEY is not configured');
     }
 
-    console.log('Making request to Gemini API...');
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+    console.log(`Making request to: ${endpoint}`);
+    console.log('Request payload:', { 
+      contents: [{ 
+        parts: [{ text: prompt }] 
+      }] 
+    });
     
-    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`, {
+    const response = await fetch(endpoint, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json"
+      },
       body: JSON.stringify({ 
         contents: [{ 
           parts: [{ text: prompt }] 
@@ -18,19 +26,19 @@ export async function askGemini(prompt: string): Promise<string> {
       })
     });
     
-    if (!res.ok) {
-      console.error(`Gemini API error: ${res.status} - ${res.statusText}`);
-      const errorText = await res.text();
-      console.error('Error response:', errorText);
-      throw new Error(`HTTP error! status: ${res.status}`);
+    if (!response.ok) {
+      console.error(`Error: ${response.status} - ${response.statusText}`);
+      const errorText = await response.text();
+      console.error('Error response body:', errorText);
+      throw new Error(`API Error: ${response.status} - ${response.statusText}`);
     }
     
-    const data = await res.json();
-    console.log('Gemini API response received');
+    const data = await response.json();
+    console.log('API response received:', data);
     
     return data.candidates?.[0]?.content?.parts?.[0]?.text || "No response available";
   } catch (error) {
-    console.error('Gemini API error:', error);
+    console.error('Error making API call:', error);
     throw new Error('Failed to get response from AI assistant');
   }
 }
